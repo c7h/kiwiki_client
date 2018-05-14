@@ -45,4 +45,4 @@ except KiwiException as e:
 
 # Installation
 
-`pip install kiwiki`
+`pip install kiwiki-client`
