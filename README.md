@@ -5,13 +5,14 @@ This is the unofficial KIWI.KI Client Library. Checkout the KIWI.KI API here: ht
 ## Example
 
 ```python
+import json
 from kiwiki import KiwiClient, KiwiException
 
 client = KiwiClient(username='foobar@example.com', password='supersecret')
 
 # Get a list of all my doors
 my_doors = client.get_locks()
-print(json.dumps(doors, indent=2, sort_keys=True))
+print(json.dumps(my_doors, indent=2, sort_keys=True))
 #[
 #  {
 #    "address": {
