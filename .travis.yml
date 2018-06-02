@@ -1,0 +1,7 @@
+depoly:
+  provider: pypi
+  user: "c7h"
+  password:
+    secure: OPxOqZaxvEfe0j51ywsxPavtGVtGn9c8iQe+GOe5SUWzO5XGaoq5do+uH8wEIApdI87La6d9U8wZpQ2ESRnxZSPMxVQ5dgAR9iM696ROxHvkrxlX3lje4MkcFyYB4NPjRBwblrPl95bHOGnkJjC2Y/3xBQbwvjzIL+5r/wCESWFyvLc2Su0MV8cGMdWC/6pf6yrLeuGLCXfMvTmJiqWqzaYMYJImj9ssjtGu9YZAzq/djEO1YfVzHKUxYzlKxjbU0GPzg+a06/K01JhY/sMvERE+XOQdEp30oPfk1f18xqoyhMDA67DXXOXV3x/MGq3szcktHcY4zJEn15DhMMqyB9WK63oVUSrjVU2N+tQnD/W5fm2Z9KXpmez2plBXVES48AV0RNVQYIvwtLe7mF9NIIwZcgCDNrhnuHDRDtw3xpMNxOSwI4l4Xd0B+aBXojgQ5+3F7gyrdUErC82UQjPorTqysNgzGUsdWKZ6eFXKquRXRux56zSc4gyYdIxnXWJurGSvNc6SDHK5e4qlIf40GsaKuRaPGjhsi+7B2ZHlU/t9blCvUQVoz2fD6Q+iPpGpWvWBIR4jFRAyksHJQ0l0dkQ2dl+tJZOBATNXGz0Iz5Ya+wRTlCmYm/KuMZVumjKyG0hRkgc2WW/Alx4Fm5DoxiQvSr55+pN8AC+4fmhhYiU=
+  on:
+    tags: true
