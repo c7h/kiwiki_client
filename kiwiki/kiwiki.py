@@ -9,11 +9,13 @@ API_AUTH_URL = BASE_URL + '/pre/session/'
 API_LIST_DOOR_URL = BASE_URL + '/pre/sensors/'
 API_OPEN_DOOR_URL = BASE_URL + '/pre/sensors/{}/act/open'
 
+DEFAULT_TIMEOUT = 4
+
 
 class KiwiClient:
     """Client for KIWI service."""
 
-    def __init__(self, username, password):
+    def __init__(self, username, password, timeout=DEFAULT_TIMEOUT):
         """Initiale the client.
 
         :param username: valid KIWI username. Hint: your signup email address.
@@ -23,6 +25,7 @@ class KiwiClient:
         self.__password = password
         self.__session_key = None
         self.__session_expires = None
+        self.__timeout = timeout
 
         # get a new session token on client startup
         self._renew_sessionkey()
@@ -47,7 +50,8 @@ class KiwiClient:
                 "username": self.__username,
                 "password": self.__password
             },
-            headers={"Accept": "application/json"}
+            headers={"Accept": "application/json"},
+            timeout=self.__timeout
         )
 
         if not auth_response.ok:
@@ -70,7 +74,8 @@ class KiwiClient:
         sensor_list = requests.get(
             API_LIST_DOOR_URL,
             params={"session_key": self.__session_key},
-            headers={"Accept": "application/json"}
+            headers={"Accept": "application/json"},
+            timeout=self.__timeout
         )
         if not sensor_list.ok:
             _LOGGER.error("could not get your KIWI doors.")
@@ -85,7 +90,8 @@ class KiwiClient:
         open_response = requests.post(
             API_OPEN_DOOR_URL.format(door_id),
             headers={"Accept": "application/json"},
-            params={"session_key": self.__session_key}
+            params={"session_key": self.__session_key},
+            timeout=self.__timeout
         )
         if not open_response.ok:
             raise KiwiException(
