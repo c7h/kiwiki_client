@@ -73,7 +73,7 @@ class KiwiClient:
         self._with_valid_session()
         sensor_list = requests.get(
             API_LIST_DOOR_URL,
-            params={"session_key": self.__session_key},
+            params={"session_key": self.__session_key, "page_size": 999},
             headers={"Accept": "application/json"},
             timeout=self.__timeout
         )
