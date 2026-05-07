@@ -12,5 +12,8 @@ setup(
     author_email='christoph.gerneth@gmail.com',
     url='https://github.com/c7h/kiwiki_client',
     packages=find_packages(exclude=('tests',)),
+    classifiers=[
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
+    ],
     install_requires=REQUIRED
 )
